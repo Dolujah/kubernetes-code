@@ -1,12 +1,12 @@
 locals {
 name      = "sskpuaet1"
-prvtsub01 = "subnet-0cd4c1de028f0bc7c"
-prvtsub02 = "subnet-0dd797c1a5f51972f"
-prvtsub03 = "subnet-0a551e756450c0204"
-pubsub01-id = "subnet-0a09fc3af3d431283"
-pubsub02-id = "subnet-0cfb6533a4a7844c1"
-pubsub03-id = "subnet-01f79a4a5eb02af7c"
-vpc-id = "vpc-017f1d95eb5820f1d"
+prvtsub01 = "subnet-086706eeb0ce2851e"
+prvtsub02 = "subnet-0a2e42981ba7e8895"
+prvtsub03 = "subnet-02e3cfaa11a50917f"
+pubsub01-id = "subnet-0a624eaf7873d43c2"
+pubsub02-id = "subnet-02d11be460035ac56"
+pubsub03-id = "subnet-0b537ffdce33bc004"
+vpc-id = "vpc-06ad79950f3f4dc7a"
 }
 
 data "aws_vpc" "vpc" {
@@ -135,12 +135,12 @@ module "monitoring-lb" {
 
 module "route53" {
   source            = "./module/route53-ssl"
-  domain-name       = "eamanzebuzz.com"
-  domain-name1      = "stage.eamanzebuzz.com"
-  domain-name2      = "prod.eamanzebuzz.com"
-  domain-name3      = "graf.eamanzebuzz.com"
-  domain-name4      = "prom.eamanzebuzz.com"
-  domain-name5      = "*.eamanzebuzz.com"
+  domain-name       = "codedollars.com"
+  domain-name1      = "stage.codedollars.com"
+  domain-name2      = "prod.codedollars.com"
+  domain-name3      = "graf.codedollars.com"
+  domain-name4      = "prom.codedollars.com"
+  domain-name5      = "*.codedollars.com"
   stage_lb_dns_name = module.environment-lb.stage-dns-name
   stage_lb_zoneid   = module.environment-lb.stage-zoneid
   prod_lb_dns_name  = module.environment-lb.prod-dns-name
